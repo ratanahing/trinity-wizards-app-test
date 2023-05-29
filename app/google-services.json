@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "126847935590",
+    "project_id": "trinity-wizards-app-test",
+    "storage_bucket": "trinity-wizards-app-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126847935590:android:7b444e8fd4e5017864f9a7",
+        "android_client_info": {
+          "package_name": "com.trinitywizards.apptest.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrN_uq0Ho5wkqZG2WHICaG_1YzRSteGWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
