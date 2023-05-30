@@ -16,6 +16,7 @@ import com.trinitywizards.apptest.databinding.ActivityScreen1Binding
 import com.trinitywizards.apptest.models.Contact
 
 private const val TAG = "Screen1Activity"
+const val EXTRA_CONTACT_ID = "EXTRA_POST_ID"
 
 class Screen1Activity : AppCompatActivity() {
 
@@ -32,11 +33,15 @@ class Screen1Activity : AppCompatActivity() {
         binding = ActivityScreen1Binding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel = ViewModelProvider(this).get(Screen1ViewModel::class.java)
+
         viewModel.getContacts(this)
 
-        viewModel.contacts.observe(this, Observer { contacts ->
-            Log.i(TAG, "Number of posts: ${contacts.size}")
+        viewModel.contacts.observe(this, Observer { posts ->
+            Log.i(TAG, "Number of posts: ${posts.size}")
             val numElements = contacts.size
+            contacts.clear()
+            contacts.addAll(posts)
+            contactAdapter.notifyDataSetChanged()
             binding.rvContacts.smoothScrollToPosition(numElements)
         })
 
@@ -56,7 +61,7 @@ class Screen1Activity : AppCompatActivity() {
             override fun onItemClick(contact: Contact) {
                 // navigate to new activity
                 val intent = Intent(this@Screen1Activity, Screen2Activity::class.java)
-                // intent.putExtra(EXTRA_POST_ID, post.id)
+                intent.putExtra(EXTRA_CONTACT_ID, contact.id)
                 startActivity(intent)
             }
         })

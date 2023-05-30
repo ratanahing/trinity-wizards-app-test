@@ -31,9 +31,6 @@ class Screen1ViewModel: ViewModel() {
             try {
 
                 val jsonFileString = getJsonDataFromAsset(contact, "data.json")
-                if (jsonFileString != null) {
-                    Log.i("data", jsonFileString)
-                }
 
                 val gson = Gson()
                 val listPersonType = object : TypeToken<List<Contact>>() {}.type
@@ -42,6 +39,10 @@ class Screen1ViewModel: ViewModel() {
                 persons.forEachIndexed { idx, person -> Log.i("data", "> Item $idx:\n$person") }
 
                 _contacts.value = persons
+                if (jsonFileString != null) {
+                    Log.i("data", _contacts.value.toString())
+                }
+
             } catch (e: Exception) {
                 _errorMessage.value = e.message
             } finally {
