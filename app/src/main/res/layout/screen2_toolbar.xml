@@ -10,7 +10,7 @@
 
         <!-- Left button (search) -->
         <Button
-            android:id="@+id/btnSearch"
+            android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -19,7 +19,7 @@
 
         <!-- Right button (add) -->
         <Button
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
