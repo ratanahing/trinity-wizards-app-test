@@ -61,6 +61,7 @@ class Screen1Activity : AppCompatActivity() {
             override fun onItemClick(contact: Contact) {
                 // navigate to new activity
                 val intent = Intent(this@Screen1Activity, Screen2Activity::class.java)
+                Log.i("CONTACTID", contact.id)
                 intent.putExtra(EXTRA_CONTACT_ID, contact.id)
                 startActivity(intent)
             }

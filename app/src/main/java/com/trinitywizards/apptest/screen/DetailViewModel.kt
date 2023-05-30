@@ -1,5 +1,6 @@
 package com.trinitywizards.apptest.screen
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,7 @@ class DetailViewModel : ViewModel() {
         // Coroutine style
         viewModelScope.launch() {
             _isLoading.value = true
+            Log.i("CONTACT", contactId.toString())
             // val fetchedPost = api.getContact(contactId)
             // val fetchedUser = api.getUser(fetchedPost.userId)
             // _contact.value = fetchedPost
